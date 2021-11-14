@@ -23,6 +23,7 @@ get("lib", "org.apiguardian", "apiguardian-api", "1.1.2")
 get("lib", "org.opentest4j", "opentest4j", "1.2.0")
 get("lib", "net.jqwik", "jqwik-api", "1.6.0")
 get("lib", "net.jqwik", "jqwik-engine", "1.6.0")
+get("lib", "org.junit-pioneer", "junit-pioneer", "1.4.2")
 
 // create target directories
 Files.createDirectories(Paths.get("bin/main-jars"))

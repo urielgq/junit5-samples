@@ -8,18 +8,14 @@
  * http://www.eclipse.org/legal/epl-v20.html
  */
 
-open module extra.modular {
-	//
-	// modules under test
-	//
-	requires com.example.application;
-	requires com.example.tool;
+package extra.modular;
 
-	//
-	// test framework api
-	//
-	requires org.junit.jupiter.api;
-	requires junit; // JUnit 4 "automatic module"
-	requires net.jqwik.api;
-	requires org.junitpioneer;
+import org.junit.jupiter.api.*;
+import org.junitpioneer.jupiter.*;
+
+class PioneerTests {
+	@Test
+	@Stopwatch
+	@Issue("851")
+	void test() {}
 }
