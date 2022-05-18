@@ -25,5 +25,8 @@ public class Calculator {
 	int pow(int a, int b) {
 		return MathHelper.pow(a, b);
 	}
+	public int substract(int a, int b){
+		return a - b;
+	}
 
 }
