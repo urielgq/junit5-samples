@@ -12,6 +12,8 @@ package com.example.tool;
 
 import org.junit.jupiter.api.*;
 
+import org.junit.jupiter.api.condition.*;
+
 @DisplayName("com.example.tool/com.example.tool.CalculatorTests")
 class CalculatorTests {
 
@@ -34,6 +36,23 @@ class CalculatorTests {
 	@Test
 	void subs(){
 		Assertions.assertEquals(6, calculator.substract(18,12), "18 - 12 should equal 6");
+	}
+	@Test
+	@EnabledOnOs({OS.WINDOWS})
+	void TestOnWindows() {
+		Assertions.assertEquals(1, 1, "Test on Windows");
+	}
+	
+	@Test
+	@EnabledOnOs({OS.MAC, OS.LINUX})
+	void TestOnLinux() {
+		Assertions.assertEquals(1, 1, "Test on Linux");
+	}
+	
+	@Test
+	@EnabledOnJre({JRE.JAVA_10, JRE.JAVA_11})
+	public void shouldOnlyRunOnJava10And11() {
+		Assertions.assertEquals(1, 1, "Test on JRE 10 - 11");
 	}
 
 }
